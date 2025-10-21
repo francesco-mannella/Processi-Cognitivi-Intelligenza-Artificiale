@@ -35,7 +35,7 @@
     * [Componenti del ciclo `while`](#componenti-del-ciclo-while)
 * [L'istruzione `break`](#listruzione-break)
 * [L'istruzione `continue`](#listruzione-continue)
-* [Cosa sono le stringhe](#cosa-sono-le-stringhe)
+* [Le stringhe](#le-stringhe)
     * [Costruzione delle stringhe](#costruzione-delle-stringhe)
     * [Componenti](#componenti)
     * [Le sequenze di escape](#le-sequenze-di-escape)
@@ -452,7 +452,7 @@ for i in range(6):
 
 
 
-## Cosa sono le stringhe
+## Le stringhe
 
 Le stringhe rappresentano parti di testo.
 
