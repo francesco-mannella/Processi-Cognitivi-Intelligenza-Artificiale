@@ -23,18 +23,18 @@
     * [I tipi di variabile predefiniti](#i-tipi-di-variabile-predefiniti)
 * [Le strutture di controllo](#le-strutture-di-controllo)
     * [L'istruzione `if`](#listruzione-if)
-    * [Componenti dell'istruzione `if`](#componenti-dellistruzione-if)
-    * [`else` - Istruzioni alternative](#else---istruzioni-alternative)
-    * [`elif` - Più alternative](#elif---più-alternative)
-* [Gli operatori di confronto](#gli-operatori-di-confronto)
-* [Gli operatori logici](#gli-operatori-logici)
-* [Il ciclo `for`](#il-ciclo-for)
-    * [Componenti del ciclo `for`](#componenti-del-ciclo-for)
-    * [Sequenza di inizializzazione personalizzata](#sequenza-di-inizializzazione-personalizzata)
-* [Il ciclo `while`](#il-ciclo-while)
-    * [Componenti del ciclo `while`](#componenti-del-ciclo-while)
-* [L'istruzione `break`](#listruzione-break)
-* [L'istruzione `continue`](#listruzione-continue)
+        * [Componenti dell'istruzione `if`](#componenti-dellistruzione-if)
+        * [`else` - Istruzioni alternative](#else---istruzioni-alternative)
+        * [`elif` - Più alternative](#elif---più-alternative)
+        * [Gli operatori di confronto](#gli-operatori-di-confronto)
+        * [Gli operatori logici](#gli-operatori-logici)
+    * [Il ciclo `for`](#il-ciclo-for)
+        * [Componenti del ciclo `for`](#componenti-del-ciclo-for)
+        * [Sequenza di inizializzazione personalizzata](#sequenza-di-inizializzazione-personalizzata)
+    * [Il ciclo `while`](#il-ciclo-while)
+        * [Componenti del ciclo `while`](#componenti-del-ciclo-while)
+    * [L'istruzione `break`](#listruzione-break)
+    * [L'istruzione `continue`](#listruzione-continue)
 * [Le stringhe](#le-stringhe)
     * [Costruzione delle stringhe](#costruzione-delle-stringhe)
     * [Componenti](#componenti)
@@ -296,7 +296,7 @@ if a > 2:
 print(a)
 ```
 
-### Componenti dell'istruzione `if`
+#### Componenti dell'istruzione `if`
 
 - **Parola chiave**: `if`
 - **Test**: Qualsiasi espressione che ha risultato vero o falso
@@ -304,7 +304,7 @@ print(a)
 - **Indentazione**: Il codice indentato a destra rispetto all'istruzione if viene eseguito se il test è verificato
 
 
-### `else` - Istruzioni alternative
+#### `else` - Istruzioni alternative
 
 Fornire un set di istruzioni alternative.
 
@@ -321,7 +321,7 @@ print(a)
 - **Se il test è falso**: esegue il blocco `else`
 
 
-### `elif` - Più alternative
+#### `elif` - Più alternative
 
 Fornire più set alternativi di istruzioni con verifica per esclusione.
 
@@ -345,7 +345,7 @@ La valutazione avviene in sequenza:
 - **Se tutti gli altri test sono falsi**: esegue il blocco `else`
 
 
-## Gli operatori di confronto
+#### Gli operatori di confronto
 
 | Operatore | Test |
 |-----------|------|
@@ -357,7 +357,7 @@ La valutazione avviene in sequenza:
 | `<=` | minore o uguale a |
 
 
-## Gli operatori logici
+#### Gli operatori logici
 
 | Operatore | Test |
 |-----------|------|
@@ -366,7 +366,7 @@ La valutazione avviene in sequenza:
 | `not <test1>` | vero se `<test1>` è falso |
 
 
-## Il ciclo `for`
+### Il ciclo `for`
 
 Ripetere tante volte un insieme di istruzioni.
 
@@ -377,7 +377,7 @@ for x in range(5):
 print(a)
 ```
 
-### Componenti del ciclo `for`
+#### Componenti del ciclo `for`
 
 - **Parole chiave**: `for` ... `in`
 - **Variabile contatore**: viene inizializzata con un valore diverso per ogni iterazione
@@ -386,7 +386,7 @@ print(a)
 - **Indentazione**: Il codice indentato a destra rispetto all'istruzione for viene eseguito ad ogni iterazione
 
 
-### Sequenza di inizializzazione personalizzata
+#### Sequenza di inizializzazione personalizzata
 
 La sequenza di inizializzazione può essere fatta "a mano" con una lista.
 
@@ -398,7 +398,7 @@ print(a)
 ```
 
 
-## Il ciclo `while`
+### Il ciclo `while`
 
 Le iterazioni sono condizionate da un test:
 - Se il test è vero, il ciclo continua
@@ -411,7 +411,7 @@ while a < 2000:
 print(a)
 ```
 
-### Componenti del ciclo `while`
+#### Componenti del ciclo `while`
 
 - **Parola chiave**: `while`
 - **Test**: decide se il ciclo continua
@@ -419,7 +419,7 @@ print(a)
 - **Indentazione**: Il codice indentato a destra rispetto all'istruzione while viene eseguito ad ogni iterazione
 
 
-## L'istruzione `break`
+### L'istruzione `break`
 
 Interrompere un ciclo `for` o `while` se si verifica una condizione.
 
@@ -435,7 +435,7 @@ for t in range(10):
 - **Parola chiave**: `break`
 
 
-## L'istruzione `continue`
+### L'istruzione `continue`
 
 - Salta le istruzioni rimanenti in un'iterazione
 - Va all'iterazione successiva
