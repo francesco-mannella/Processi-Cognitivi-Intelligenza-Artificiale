@@ -21,7 +21,7 @@
             * [Valori complessi complex](#valori-complessi-complex)
         * [Indagare il tipo di una variabile](#indagare-il-tipo-di-una-variabile)
     * [I tipi di variabile predefiniti](#i-tipi-di-variabile-predefiniti)
-* [Il linguaggio Python - Le strutture di controllo](#il-linguaggio-python---le-strutture-di-controllo)
+* [Le strutture di controllo](#le-strutture-di-controllo)
     * [L'istruzione `if`](#listruzione-if)
     * [Componenti dell'istruzione `if`](#componenti-dellistruzione-if)
     * [`else` - Istruzioni alternative](#else---istruzioni-alternative)
@@ -282,7 +282,7 @@ La tabella seguente riassume i principali tipi di variabile predefiniti in Pytho
 | **Dizionari** | `dict` | | | X | X |----
 
 
-## Il linguaggio Python - Le strutture di controllo
+## Le strutture di controllo
 
 
 ### L'istruzione `if`
