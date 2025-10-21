@@ -63,22 +63,22 @@
     * [Caratteristiche delle Liste](#caratteristiche-delle-liste)
         * [Le liste sono sequenze ordinate](#le-liste-sono-sequenze-ordinate)
         * [Le liste possono contenere qualsiasi oggetto](#le-liste-possono-contenere-qualsiasi-oggetto)
-* [Gli Indici](#gli-indici)
-    * [Come richiamare gli elementi di una lista](#come-richiamare-gli-elementi-di-una-lista)
-    * [Indici negativi](#indici-negativi)
-* [Iterazione sulle Liste](#iterazione-sulle-liste)
-* [La Notazione di Slicing](#la-notazione-di-slicing)
-    * [La regola dello slicing](#la-regola-dello-slicing)
-* [Comprensione di Lista](#comprensione-di-lista)
-    * [Struttura della comprensione di lista](#struttura-della-comprensione-di-lista)
-    * [Comprensioni di lista annidate](#comprensioni-di-lista-annidate)
-    * [Comprensioni di lista vs. cicli for](#comprensioni-di-lista-vs-cicli-for)
-* [Operazioni con le Liste](#operazioni-con-le-liste)
-    * [Concatenazione](#concatenazione)
-    * [Ripetizione](#ripetizione)
-* [Metodi delle Liste](#metodi-delle-liste)
-    * [Esempio: extend vs operatore +=](#esempio-extend-vs-operatore-)
-* [L'operatore `in`](#loperatore-in)
+    * [Gli Indici](#gli-indici)
+        * [Come richiamare gli elementi di una lista](#come-richiamare-gli-elementi-di-una-lista)
+        * [Indici negativi](#indici-negativi)
+    * [Iterazione sulle Liste](#iterazione-sulle-liste)
+    * [La Notazione di Slicing](#la-notazione-di-slicing)
+        * [La regola dello slicing](#la-regola-dello-slicing)
+    * [Comprensione di Lista](#comprensione-di-lista)
+        * [Struttura della comprensione di lista](#struttura-della-comprensione-di-lista)
+        * [Comprensioni di lista annidate](#comprensioni-di-lista-annidate)
+        * [Comprensioni di lista vs. cicli for](#comprensioni-di-lista-vs-cicli-for)
+    * [Operazioni con le Liste](#operazioni-con-le-liste)
+        * [Concatenazione](#concatenazione)
+        * [Ripetizione](#ripetizione)
+    * [Metodi delle Liste](#metodi-delle-liste)
+        * [Esempio: extend vs operatore +=](#esempio-extend-vs-operatore-)
+    * [L'operatore `in`](#loperatore-in)
 
 <!-- vim-markdown-toc -->
 ## Il linguaggio python 
@@ -700,9 +700,9 @@ lista2 = [4.0, ["primo", 2], 8, True]
 
 Nota: un elemento può essere a sua volta una lista.
 
-## Gli Indici
+### Gli Indici
 
-### Come richiamare gli elementi di una lista
+#### Come richiamare gli elementi di una lista
 
 ```python
 lista = [1, 3.0, 1.0, 2, 40]
@@ -717,7 +717,7 @@ Indici:  0    1     2    3   4
         [1,  3.0,  1.0,  2,  40]
 ```
 
-### Indici negativi
+#### Indici negativi
 
 ```python
 lista = [1, 3.0, 1.0, 2, 40]
@@ -725,7 +725,7 @@ lista[-1]  # 40 -- ultimo elemento
 lista[-2]  # 2 -- penultimo elemento
 ```
 
-## Iterazione sulle Liste
+### Iterazione sulle Liste
 
 Gli oggetti lista sono iterabili: possono essere scorsi con un ciclo `for`
 
@@ -735,7 +735,7 @@ for elemento in lista:
     print(elemento)
 ```
 
-## La Notazione di Slicing
+### La Notazione di Slicing
 
 Come ottenere una parte di una lista:
 
@@ -750,7 +750,7 @@ lista[:]       # [1, 3.0, 1.0, 2, 40]
 lista[::-1]    # [40, 2, 1.0, 3.0, 1]
 ```
 
-### La regola dello slicing
+#### La regola dello slicing
 
 ```python
 variabile[inizio:fine:passo]
@@ -770,16 +770,16 @@ variabile[inizio:fine:passo]
   - se viene omesso si sottintende 1
   - se è negativo l'ordine è invertito (dall'indice maggiore all'indice minore)
 
-## Comprensione di Lista
+### Comprensione di Lista
 
 Creare liste in maniera iterativa:
 
 ```python
 lst = [x ** 2 for x in range(1, 8)]
-# [1, 4, 9, 16, 25, 36, 49]
+## [1, 4, 9, 16, 25, 36, 49]
 ```
 
-### Struttura della comprensione di lista
+#### Struttura della comprensione di lista
 
 ```python
 [espressione for variabile_contatore in sequenza]
@@ -790,13 +790,13 @@ lst = [x ** 2 for x in range(1, 8)]
 - **sequenza**: la sequenza di iterazione della variabile contatore
 - **espressione**: definisce il singolo elemento, dato il valore corrente della variabile contatore
 
-### Comprensioni di lista annidate
+#### Comprensioni di lista annidate
 
 **Lista di liste:**
 ```python
 lst = [[x * y for y in range(1, 4)] 
        for x in range(1, 4)]
-# [[1, 2, 3], [2, 4, 6], [3, 6, 9]]
+## [[1, 2, 3], [2, 4, 6], [3, 6, 9]]
 ```
 
 Per ogni `x`, viene completata una sottolista iterando tutte le `y`.
@@ -805,12 +805,12 @@ Per ogni `x`, viene completata una sottolista iterando tutte le `y`.
 ```python
 lst = [x * y for y in range(1, 4) 
        for x in range(1, 4)]
-# [1, 2, 3, 2, 4, 6, 3, 6, 9]
+## [1, 2, 3, 2, 4, 6, 3, 6, 9]
 ```
 
 Per ogni `y`, viene calcolato un nuovo elemento iterando tutte le `x`.
 
-### Comprensioni di lista vs. cicli for
+#### Comprensioni di lista vs. cicli for
 
 **Pro:**
 - Codice più veloce
@@ -820,27 +820,27 @@ Per ogni `y`, viene calcolato un nuovo elemento iterando tutte le `x`.
 - Codice illegibile (se si esagera)
 - Espressioni one-liner per le singole iterazioni
 
-## Operazioni con le Liste
+### Operazioni con le Liste
 
-### Concatenazione
+#### Concatenazione
 
 ```python
 [5, 2.0, 3] + [1, 1, 3]
-# [5, 2.0, 3, 1, 1, 3]
+## [5, 2.0, 3, 1, 1, 3]
 ```
 
 L'operatore `+` concatena due liste.
 
-### Ripetizione
+#### Ripetizione
 
 ```python
 [2, 3] * 3
-# [2, 3, 2, 3, 2, 3]
+## [2, 3, 2, 3, 2, 3]
 ```
 
 L'operatore `*` concatena una lista con se stessa per un numero di volte dato dal moltiplicatore.
 
-## Metodi delle Liste
+### Metodi delle Liste
 
 **Usare i metodi invece che espressioni con gli operatori quando è possibile.**
 
@@ -857,7 +857,7 @@ Lista dei metodi disponibili:
 - `.index()` - trova l'indice di un elemento
 - `.remove()` - rimuove un elemento
 
-### Esempio: extend vs operatore +=
+#### Esempio: extend vs operatore +=
 
 ```python
 lst = [1, 2, 3, 4]
@@ -866,12 +866,12 @@ lst += [99, 99]  # Possibile ma...
 lst.extend([99, 99])  # Preferibile!
 ```
 
-## L'operatore `in`
+### L'operatore `in`
 
 ```python
 lst = [1, 2, 3, 4]
 2 in lst
-# True
+## True
 ```
 
 Ritorna `True` se l'oggetto sta dentro il contenitore.
