@@ -59,6 +59,26 @@
         * [f-string (Python >= 3.6)](#f-string-python--36)
             * [Componenti](#componenti-3)
             * [Regola per i placeholder (f-string)](#regola-per-i-placeholder-f-string)
+* [Le Liste](#le-liste)
+    * [Caratteristiche delle Liste](#caratteristiche-delle-liste)
+        * [Le liste sono sequenze ordinate](#le-liste-sono-sequenze-ordinate)
+        * [Le liste possono contenere qualsiasi oggetto](#le-liste-possono-contenere-qualsiasi-oggetto)
+* [Gli Indici](#gli-indici)
+    * [Come richiamare gli elementi di una lista](#come-richiamare-gli-elementi-di-una-lista)
+    * [Indici negativi](#indici-negativi)
+* [Iterazione sulle Liste](#iterazione-sulle-liste)
+* [La Notazione di Slicing](#la-notazione-di-slicing)
+    * [La regola dello slicing](#la-regola-dello-slicing)
+* [Comprensione di Lista](#comprensione-di-lista)
+    * [Struttura della comprensione di lista](#struttura-della-comprensione-di-lista)
+    * [Comprensioni di lista annidate](#comprensioni-di-lista-annidate)
+    * [Comprensioni di lista vs. cicli for](#comprensioni-di-lista-vs-cicli-for)
+* [Operazioni con le Liste](#operazioni-con-le-liste)
+    * [Concatenazione](#concatenazione)
+    * [Ripetizione](#ripetizione)
+* [Metodi delle Liste](#metodi-delle-liste)
+    * [Esempio: extend vs operatore +=](#esempio-extend-vs-operatore-)
+* [L'operatore `in`](#loperatore-in)
 
 <!-- vim-markdown-toc -->
 ## Il linguaggio python 
@@ -646,3 +666,216 @@ print(s2)
 | 5 | numero intero | Precisione decimale | opzionale per placeholder float | richiede 2, 3, 6 |
 | 6 | lettera (`d`, `f`, ...) | tipo del placeholder | opzionale | richiede 2 e 6 |
 | 7 | `}` | fine del placeholder | obbligatorio | - |
+
+## Le Liste
+
+Le liste sono oggetti composti da più elementi.
+
+```python
+lista1 = [1, 4, 5, 8]
+lista2 = [0.3, 8 + 7j, "Nessuno"]
+lista3 = []
+```
+
+### Caratteristiche delle Liste
+
+#### Le liste sono sequenze ordinate
+
+```python
+lista1 = [4.0, 5, 8, True]
+```
+
+Gli indici partono sempre da 0:
+
+```
+Indici:  0    1   2    3
+        [4.0, 5,  8,  True]
+```
+
+#### Le liste possono contenere qualsiasi oggetto
+
+```python
+lista2 = [4.0, ["primo", 2], 8, True]
+```
+
+Nota: un elemento può essere a sua volta una lista.
+
+## Gli Indici
+
+### Come richiamare gli elementi di una lista
+
+```python
+lista = [1, 3.0, 1.0, 2, 40]
+print(lista[0])  # Primo elemento
+x = lista[1] + 4
+```
+
+Le parentesi quadre sono usate per richiamare un singolo elemento. L'indice tra parentesi richiama l'elemento in quella posizione.
+
+```
+Indici:  0    1     2    3   4
+        [1,  3.0,  1.0,  2,  40]
+```
+
+### Indici negativi
+
+```python
+lista = [1, 3.0, 1.0, 2, 40]
+lista[-1]  # 40 -- ultimo elemento
+lista[-2]  # 2 -- penultimo elemento
+```
+
+## Iterazione sulle Liste
+
+Gli oggetti lista sono iterabili: possono essere scorsi con un ciclo `for`
+
+```python
+lista = [1, 3.0, 1.0, 2, 40]
+for elemento in lista:
+    print(elemento)
+```
+
+## La Notazione di Slicing
+
+Come ottenere una parte di una lista:
+
+```python
+lista = [1, 3.0, 1.0, 2, 40]
+lista[1:3]     # [3.0, 1.0]
+lista[:2]      # [1, 3.0]
+lista[2:]      # [1.0, 2, 40]
+lista[-2:]     # [2, 40]
+lista[:3:2]    # [1, 1.0]
+lista[:]       # [1, 3.0, 1.0, 2, 40]
+lista[::-1]    # [40, 2, 1.0, 3.0, 1]
+```
+
+### La regola dello slicing
+
+```python
+variabile[inizio:fine:passo]
+```
+
+- **inizio**: l'indice da cui inizia la sottolista
+  - può essere omesso
+  - se viene omesso si sottintende l'indice 0
+
+- **fine**: l'indice che indica la fine della sottolista
+  - può essere omesso
+  - se viene omesso si sottintende l'indice dopo l'ultimo elemento
+  - l'ultimo elemento ha indice `<fine - 1>`
+
+- **passo**: indica il salto nella sequenza durante la scelta
+  - può essere omesso
+  - se viene omesso si sottintende 1
+  - se è negativo l'ordine è invertito (dall'indice maggiore all'indice minore)
+
+## Comprensione di Lista
+
+Creare liste in maniera iterativa:
+
+```python
+lst = [x ** 2 for x in range(1, 8)]
+# [1, 4, 9, 16, 25, 36, 49]
+```
+
+### Struttura della comprensione di lista
+
+```python
+[espressione for variabile_contatore in sequenza]
+```
+
+- **parole chiave**: `for` e `in`
+- **variabile contatore**: la variabile che itera
+- **sequenza**: la sequenza di iterazione della variabile contatore
+- **espressione**: definisce il singolo elemento, dato il valore corrente della variabile contatore
+
+### Comprensioni di lista annidate
+
+**Lista di liste:**
+```python
+lst = [[x * y for y in range(1, 4)] 
+       for x in range(1, 4)]
+# [[1, 2, 3], [2, 4, 6], [3, 6, 9]]
+```
+
+Per ogni `x`, viene completata una sottolista iterando tutte le `y`.
+
+**Lista piatta:**
+```python
+lst = [x * y for y in range(1, 4) 
+       for x in range(1, 4)]
+# [1, 2, 3, 2, 4, 6, 3, 6, 9]
+```
+
+Per ogni `y`, viene calcolato un nuovo elemento iterando tutte le `x`.
+
+### Comprensioni di lista vs. cicli for
+
+**Pro:**
+- Codice più veloce
+- Codice più compatto
+
+**Contro:**
+- Codice illegibile (se si esagera)
+- Espressioni one-liner per le singole iterazioni
+
+## Operazioni con le Liste
+
+### Concatenazione
+
+```python
+[5, 2.0, 3] + [1, 1, 3]
+# [5, 2.0, 3, 1, 1, 3]
+```
+
+L'operatore `+` concatena due liste.
+
+### Ripetizione
+
+```python
+[2, 3] * 3
+# [2, 3, 2, 3, 2, 3]
+```
+
+L'operatore `*` concatena una lista con se stessa per un numero di volte dato dal moltiplicatore.
+
+## Metodi delle Liste
+
+**Usare i metodi invece che espressioni con gli operatori quando è possibile.**
+
+Lista dei metodi disponibili:
+- `.append()` - aggiunge un elemento
+- `.count()` - conta occorrenze
+- `.insert()` - inserisce un elemento
+- `.reverse()` - inverte l'ordine
+- `.clear()` - svuota la lista
+- `.extend()` - estende con un'altra lista
+- `.pop()` - rimuove e restituisce un elemento
+- `.sort()` - ordina la lista
+- `.copy()` - crea una copia
+- `.index()` - trova l'indice di un elemento
+- `.remove()` - rimuove un elemento
+
+### Esempio: extend vs operatore +=
+
+```python
+lst = [1, 2, 3, 4]
+lst += [99, 99]  # Possibile ma...
+
+lst.extend([99, 99])  # Preferibile!
+```
+
+## L'operatore `in`
+
+```python
+lst = [1, 2, 3, 4]
+2 in lst
+# True
+```
+
+Ritorna `True` se l'oggetto sta dentro il contenitore.
+
+---
+
+*Francesco Mannella - Programmazione Scientifica in Python - Il linguaggio Python: Le liste*
